@@ -1,0 +1,209 @@
+/* ===== Top Navigation Menu ===== */
+.top-menu {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+  width: 600px;
+}
+
+.top-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #f0f0f0;
+}
+
+.top-menu li {
+  margin: 0;
+  padding: 0;
+}
+
+.top-menu a {
+  display: inline-block;
+  padding: 10px 15px;
+  margin: 5px;
+  border: 1px solid #006400;
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.top-menu a:hover {
+  background-color: #b3d9ff;
+}
+
+/* ===== Header and Logo ===== */
+.header {
+  background-color: #2E7D32;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.header img {
+  float: right;
+  width: 100px; /* Fixed size */
+  height: auto;
+  max-height: 120px; /* Prevents oversized images */
+  background: #e0f7fa;
+  border-radius: 8px;
+}
+.green-earth-seattle {
+  max-width: 150px; /* Keeps it small */
+  height: auto; /* Maintains aspect ratio */
+  position: absolute; /* Allows precise positioning */
+  top: 10px; /* Adjust to fine-tune */
+  left: 10px; /* Moves it to the left */
+  background: transparent; /* Ensures transparency */
+}
+
+
+/* ===== Body & Background ===== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4 url("../components/NatureBackground.jpg") no-repeat center fixed;
+  background-size: cover;
+  text-align: center;
+}
+
+/* ===== Fix for Large Images ===== */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== Card Layout ===== */
+.card {
+  background: #2E7D32; /* Green background */
+  color: white; /* White text for contrast */
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  text-align: center;
+}
+.green-earth-seattle {
+  max-width: 150px; /* Adjust this if you need it smaller or larger */
+  height: auto; /* Keeps the aspect ratio */
+  display: block; /* Ensures it behaves correctly */
+  margin: 10px auto; /* Centers the logo */
+  background: transparent; /* Ensures transparency */
+}
+
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card-content {
+  text-align: center;
+}
+
+/* ===== Card Image Fix ===== */
+.card img {
+  width: 80%; /* Scales within the card */
+  max-width: 200px; /* Prevents huge images */
+  height: auto;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+/* ===== Blog Page Layout ===== */
+.blog-box-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.blog-green-box-left,
+.blog-green-box-center,
+.blog-green-box-right {
+  flex: 1;
+  min-width: 300px;
+  margin: 10px;
+}
+
+/* ===== Contact Page Layout ===== */
+.contact-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.contact-email-box,
+.contact-phone-box,
+.contact-address-box {
+  width: 80%;
+  max-width: 400px;
+}
+/* ===== Contact Page Link Styling ===== */
+.contact-box a {
+  color: #FFD700; /* Gold for high contrast */
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.contact-box a:hover {
+  color: #FFA500; /* Orange for a slight hover effect */
+}
+
+
+.site-footer {
+  width: 600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  background-color: #002200;
+  color: #fff;
+  padding: 10px;
+}
+
+.footer-left {
+  text-align: left;
+}
+
+.footer-middle {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Adds spacing between icons */
+}
+
+.footer-middle a {
+  display: inline-block; /* Ensures the links behave correctly */
+}
+
+
+.footer-right {
+  text-align: right;
+}
+
+/* ===== Social Media and Button Styling ===== */
+.social-icon {
+  width: 24px;
+  height: 24px;
+  margin: 0 5px;
+  vertical-align: middle;
+}
+
+.footer-right button {
+  background-color: #b3d9ff;
+  color: #000;
+  border: 1px solid #006400;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.footer-right button:hover {
+  background-color: #fff;
+}

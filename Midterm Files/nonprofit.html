@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Green Earth Seattle - Non-Profit</title>
+    <link rel="preload" as="image" href="../components/NatureBackground.jpg">
+    <link rel="stylesheet" href="../style/main.css">
+    <script src="../src/jquery-3.7.1.min.js"></script>  </head>
+  <body>
+    <!-- Top Navigation Menu -->
+    <nav class="top-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="nonprofit.html">Non Profit</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header">
+      <h1>Green Earth Seattle - Non-Profit</h1>
+      <img src="../components/GreenEarthSeattle.png" alt="Logo" class="green-earth-seattle">
+  </div>
+  
+  
+  <div class="np-box-container">
+      <div class="card np-green-box-left">
+          <div class="card-content">
+              <h1>Current Projects:</h1>
+              <ol>
+                  <li>Green Spaces Initiative</li>
+                  <li>Community Cleanups</li>
+                  <li>Sustainable Living Workshops</li>
+                  <li>Youth Environmental Leadership</li>
+                  <li>Salmon Habitat Restoration</li>
+              </ol>
+          </div>
+      </div>
+  
+      <div class="card np-green-box-center">
+          <div class="card-content">
+              <img src="../components/nonprofit.jpg" alt="Nonprofit Image">
+          </div>
+      </div>
+  
+      <div class="card np-green-box-right">
+          <div class="card-content">
+              <h1>Highest Donators:</h1>
+              <ol>
+                  <li>Emerald Giving Foundation</li>
+                  <li>Cascade Philanthropy Group</li>
+                  <li>Rainier Community Fund</li>
+                  <li>Seattle Green Guardians</li>
+                  <li>Harbor Lights Charitable Trust</li>
+              </ol>
+          </div>
+      </div>
+  </div>
+  
+  <div class="np-mission-statement card">
+    <p>
+        Our mission is to provide the best possible solutions through innovation, integrity, and dedication, ensuring excellence in every aspect of our work while exceeding the expectations of those we serve.
+    </p>
+</div>
+  
+
+  
+    <footer class="site-footer">
+        <!-- Left: Copyright -->
+        <div class="footer-left">
+          &copy; 2025 Green Earth Seattle
+        </div>
+      
+        <!-- Middle: Social Media Links with Icons -->
+        <div class="footer-middle">
+          <a href="https://twitter.com" target="_blank">
+            <img src="../components/twitter_icon.png" alt="Twitter" class="social-icon">
+          </a>
+          <a href="https://facebook.com" target="_blank">
+            <img src="../components/facebook_icon.png" alt="Facebook" class="social-icon">
+          </a>
+          <a href="https://instagram.com" target="_blank">
+            <img src="../components/instagram_icon.png" alt="Instagram" class="social-icon">
+          </a>
+          <a href="https://linkedIn.com" target="_blank">
+            <img src="../components/linkedin_icon.png" alt="LinkedIn" class="social-icon">
+          </a>
+        </div>
+      
+        <!-- Right: Donate Button -->
+        <div class="footer-right">
+          <button id="alertButton">Donate</button>
+          <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+          <script>
+            $(document).ready(function() {
+              $("#alertButton").click(function() {
+                Swal.fire({
+                  title: "Thank You!",
+                  text: "Thanks for Donating!",
+                  icon: "success",
+                  confirmButtonText: "OK"
+                });
+              });
+            });
+          </script>
+        </footer>                
+  </body>
+</html>
