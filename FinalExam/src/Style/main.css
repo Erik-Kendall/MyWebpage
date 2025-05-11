@@ -1,0 +1,436 @@
+/* main.css */
+
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('src/Components/NatureBackground.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #003300;
+}
+
+/* Header and Navigation */
+.main-header {
+  background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white background */
+  display: flex;
+  justify-content: space-between; /* Space between title and nav */
+  align-items: center; /* Vertically align items */
+  padding: 10px 20px;
+  border-bottom: 2px solid #006400;
+}
+
+.site-title {
+  font-size: 2em;
+  color: #006400;
+  margin: 0;
+}
+
+.site-logo {
+  width: 150px;
+  height: auto;
+}
+
+.top-menu {
+  margin: 0;
+  padding: 0;
+}
+
+.top-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end; /* Align tabs to the right */
+  background-color: transparent; /* Transparent background for the ul */
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+}
+
+.top-menu li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation Links (Tabs and Top Menu) */
+.top-menu a,
+.tab {
+  display: inline-block;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-weight: bold;
+  white-space: nowrap; /* Prevent text wrapping */
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.top-menu a {
+  margin-left: 5px; /* Space between tabs */
+  border: 1px solid #006400;
+  background-color: #333; /* Black background for buttons */
+  color: white; /* White text for buttons */
+}
+
+.tab {
+  color: white;
+  font-size: 1.2em;
+  background-color: #333;
+}
+
+.top-menu a:hover,
+.tab:hover {
+  background-color: #555;
+}
+
+.tab-list {
+  display: flex;
+  gap: 20px;
+}
+
+/* Main Content */
+main {
+  padding: 20px;
+  background-color: #003300;
+  margin: 20px auto;
+  max-width: 1000px;
+  border-radius: 10px;
+}
+
+main h1 {
+  color: white;
+  text-align: center;
+  font-size: 3em;
+  margin-top: 1rem;
+}
+
+.rally-image {
+  max-width: 450px;
+  height: auto;
+  border-radius: 10px;
+  margin: 15px 0;
+}
+
+/* Green Sections (Mission and General) */
+.mission-motion,
+.green-section {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #f0fdf4;
+  border-left: 4px solid #228B22;
+  border-radius: 8px;
+}
+
+.mission-motion h2,
+.green-section h2 {
+  color: #228B22;
+  margin-top: 0;
+}
+
+.mission-motion p,
+.green-section p {
+  font-size: 1em;
+  color: #2c4c36;
+}
+
+.card section {
+  margin-bottom: 3rem;
+}
+
+.card section:last-child {
+  margin-bottom: 0;
+}
+
+.card img {
+  margin-top: 1rem;
+  max-width: 450px;
+  height: auto;
+}
+
+/* Contact Page Styles */
+/* Applying these styles to the contact card within the main */
+.contact-card {
+  /* Existing styles */
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto; /* Center the card on the page */
+  text-align: center; /* Center the content within the card */
+}
+
+.contact-card h2 {
+  text-align: center;
+  color: #006400;
+  margin-bottom: 20px;
+}
+
+.contact-card p {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+  font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.contact-card button[type="submit"] {
+  background-color: #228B22;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-card button[type="submit"]:hover {
+  background-color: #006400;
+}
+
+.contact-card button[type="submit"]:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+.success-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 15px;
+  border: 1px solid #c3e6cb;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+/* Footer */
+.site-footer {
+  width: 100%; /* Make the footer take the full width */
+  margin-top: 40px; /* Keep the top margin */
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* Left, Center (flexible), Right */
+  align-items: center; /* Vertically align items in the row */
+  background-color: #e0f2e9; /* Keep the light green background */
+  border-top: 2px solid #006400; /* Keep the top border */
+  color: #003300; /* Keep the dark green text color */
+  padding: 15px 20px; /* Adjust padding to include horizontal */
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.footer-left {
+  text-align: left;
+}
+
+.footer-middle {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Spacing between icons */
+}
+
+.footer-middle a {
+  display: inline-block; /* Ensures the links behave correctly */
+}
+
+.footer-middle img { /* Style for the social media icons */
+  width: 30px; /* Keep the icon width */
+  height: auto;
+  margin: 0 5px; /* Adjust margin for spacing */
+  vertical-align: middle; /* Align icons vertically */
+}
+
+.footer-right {
+  text-align: right;
+}
+
+.footer-right button {
+  background-color: #b3d9ff;
+  color: #000;
+  border: 1px solid #006400;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.footer-right button:hover {
+  background-color: #fff;
+}
+
+/* Blog Page Styles */
+.blog-categories {
+  background: #228B22;
+  color: black;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+.blog-categories h1 {
+  margin-top: 0;
+}
+
+.blog-box-container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.blog-category-section {
+  margin-bottom: 40px;
+}
+
+.blog-category-section h1 {
+  color: White;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.horizontal-cards-container {
+  display: flex;
+  flex-direction: row; /* Keep cards in a horizontal row */
+  gap: 20px; /* Spacing between the horizontal cards */
+  overflow-x: auto; /* Enable horizontal scrolling if cards overflow */
+}
+
+.horizontal-card {
+  display: flex;
+  flex-direction: column; /* Stack content vertically within the card */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  gap: 10px;
+  color: #333;
+  width: 300px; /* Set a fixed width for each card, adjust as needed */
+  box-sizing: border-box;
+  margin-bottom: 20px; /* Keep some vertical spacing between rows (if any) */
+}
+
+.horizontal-card h2 {
+  margin: 0;
+  color: #006400;
+  font-size: 1.5em;
+}
+
+.horizontal-card time {
+  color: #666;
+  font-size: 0.9em;
+}
+
+.horizontal-card p {
+  line-height: 1.6;
+  margin: 0;
+  font-size: 1em;
+}
+
+/* Call to Action Button */
+.cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color: #228B22; /* Green background */
+  color: white; /* White text */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: #228B22; /* Darker green on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.cta-button:active {
+  transform: translateY(1px); /* Button presses down when clicked */
+}
+
+.cta-button:focus {
+  outline: none; /* Removes outline when focused */
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.5); /* Focus indicator */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column; /* Stack title and nav vertically */
+    align-items: flex-start; /* Align items to the left */
+  }
+
+  .top-menu {
+    width: 100%; /* Make menu full width when stacked */
+    text-align: left; /* Align tabs to the left below the title */
+    margin-top: 10px;
+  }
+
+  .top-menu ul {
+    justify-content: flex-start; /* Align tabs to the left */
+  }
+
+  .top-menu a {
+    font-size: 0.9em;
+    padding: 8px 12px;
+    margin: 3px 0 3px 5px; /* Adjust margins for stacked layout */
+  }
+
+  .horizontal-cards-container {
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    overflow-x: auto; /* Keep horizontal scroll */
+  }
+
+  .horizontal-card {
+    width: calc(50% - 10px); /* Two cards side-by-side on smaller screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .site-logo {
+    width: 100px;
+  }
+
+  .tab-list {
+    gap: 10px;
+  }
+
+  .tab {
+    padding: 8px 15px;
+    font-size: 1em;
+  }
+}
