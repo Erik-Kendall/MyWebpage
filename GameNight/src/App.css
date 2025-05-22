@@ -1,0 +1,1511 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f0f0; /* Default background for the body */
+}
+
+/* Center entire site */
+.app-container {
+  max-width: 960px; /* limits width for better readability */
+  margin: 0 auto; /* center horizontally */
+  padding: 20px 15px; /* breathing room inside container */
+  box-sizing: border-box;
+  background-color: #fff; /* white background for content */
+  min-height: 100vh; /* fill viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Content Area - General styles that might apply to various content sections */
+.content ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  color: #333;
+}
+
+.content li {
+  margin-bottom: 0.5rem;
+}
+
+.content a {
+  color: #1d3557;
+  text-decoration: none;
+}
+
+.content a:hover,
+.content a:focus {
+  text-decoration: underline;
+  color: #457b9d;
+}
+
+/* Availability Calendar - Merged and Cleaned */
+/* This section now includes the specific react-calendar overrides you provided */
+.availability-calendar {
+  display: flex; /* Kept from your input */
+  flex-direction: column; /* Kept from your input */
+  align-items: center; /* Kept from your input */
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+  text-align: center;
+  /* Removed the problematic 'max-width: 400px;' from previous iteration.
+     The .react-calendar rules below will handle sizing. */
+}
+
+/* Make the overall calendar wider */
+.react-calendar {
+  width: 100% !important; /* Make it take full width of its parent */
+  max-width: 800px; /* Or any desired max width, e.g., 900px, 1000px */
+  /* Adjust height as needed if events are overflowing too much */
+  /* height: 500px; */ /* Example: if you want a fixed height */
+}
+
+/* Ensure the calendar tiles are also flexible */
+.react-calendar__tile {
+  height: 100px; /* Make sure tiles have enough height to contain events */
+}
+
+/* Adjust font sizes for better readability if calendar gets wider */
+.react-calendar__navigation button {
+  font-size: 1.1em; /* Make navigation buttons a bit bigger */
+}
+.react-calendar__month-view__weekdays__weekday abbr {
+  font-size: 1.1em; /* Make day abbreviations a bit bigger */
+}
+.react-calendar__tile abbr {
+  font-size: 1.2em; /* Make day numbers bigger */
+}
+
+/* Jiggle Animation */
+@keyframes jiggle {
+  0%, 100% { transform: rotate(0deg) translate(0, 0); }
+  25% { transform: rotate(1deg) translate(1px, -1px); }
+  50% { transform: rotate(-1deg) translate(-1px, 1px); }
+  75% { transform: rotate(1deg) translate(1px, 1px); }
+}
+
+/* Quick Links Page Specific Styles (kept exactly as is, as they are unique) */
+.content.quick-links-silly-style {
+  background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+  background-color: #ffe6f0;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 10px 10px 0px 0px #ffb3d9, 20px 20px 0px 0px #ff80bf;
+  margin: 20px;
+  animation: bounceIn 1s ease-out;
+  text-align: center;
+}
+
+.content.quick-links-silly-style h1 {
+  font-family: 'Comic Neue', cursive;
+  color: #8a2be2;
+  text-align: center;
+  font-size: 3.5rem;
+  text-shadow: 4px 4px #ffcce6;
+  margin-bottom: 2rem;
+  transform: rotate(-3deg);
+  animation: jiggle infinite 5s linear;
+}
+
+.content.quick-links-silly-style ul {
+  list-style-type: '🥳 ';
+  padding-left: 2rem;
+}
+
+.content.quick-links-silly-style li {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0.8rem 1.2rem;
+  border-radius: 25px;
+  border: 2px dashed #ff66b2;
+  box-shadow: 3px 3px 0px #ffcce6;
+  transition: all 0.2s ease-in-out;
+}
+
+.content.quick-links-silly-style li:hover {
+  transform: scale(1.05) rotate(2deg);
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 5px 5px 0px #ff80bf;
+}
+
+.content.quick-links-silly-style a {
+  color: #d10000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.content.quick-links-silly-style a:hover {
+  text-decoration: underline wavy #8a2be2;
+  color: #4b0082;
+}
+
+/* BounceIn animation */
+@keyframes bounceIn {
+  0%, 20%, 40%, 60%, 80%, 100% {
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  40% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+  80% {
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+/* Accessibility Focus Styles */
+a, button {
+  outline: none;
+}
+
+a:focus, button:focus {
+  outline: 3px solid #1d3557;
+  outline-offset: 3px;
+}
+
+/* Colorblind Mode */
+.colorblind-mode {
+  background-color: #000 !important;
+  color: #FFD700 !important;
+}
+
+.colorblind-mode a,
+.colorblind-mode button {
+  color: #FFD700 !important;
+  background-color: #000 !important;
+  border-color: #FFD700 !important;
+}
+
+/* src/pages/GamingTools.css - Merged and Cleaned */
+.gaming-tools-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gaming-tools-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #eee;
+}
+
+.tool-navigation {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+  background-color: #333;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tool-navigation button {
+  background-color: #555;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  flex-grow: 1;
+  min-width: 150px;
+}
+
+.tool-navigation button:hover {
+  background-color: #777;
+  transform: translateY(-2px);
+}
+
+.tool-navigation button.active {
+  background-color: #8a2be2;
+  box-shadow: 0 0 15px #8a2be288;
+}
+
+.tool-display-area {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.tool-card {
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 100%;
+  max-width: 450px;
+  color: #f0f0f0;
+}
+
+.tool-card h3 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  color: #00bcd4;
+  font-size: 1.8rem;
+}
+
+/* --- Calculator Specific Styles --- */
+.calculator-card {
+  max-width: 350px;
+}
+
+.calc-display {
+  width: calc(100% - 20px);
+  padding: 15px;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  text-align: right;
+  background-color: #1a1a1a;
+  border: 1px solid #555;
+  border-radius: 5px;
+  color: #fff;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.calc-result {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #b0b0b0;
+}
+
+.calc-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.calc-button {
+  background-color: #444;
+  color: #fff;
+  border: none;
+  padding: 18px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.calc-button:hover {
+  background-color: #666;
+}
+
+.calc-button.operator {
+  background-color: #8a2be2;
+}
+
+.calc-button.operator:hover {
+  background-color: #a040f0;
+}
+
+.calc-button.clear-btn {
+  background-color: #dc3545;
+}
+
+.calc-button.clear-btn:hover {
+  background-color: #c82333;
+}
+
+.calc-button[onclick*="handleCalculate"] {
+  background-color: #28a745;
+  grid-column: span 2;
+}
+
+.calc-button[onclick*="handleCalculate"]:hover {
+  background-color: #218838;
+}
+
+.calc-tip {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: 15px;
+}
+
+/* --- Fancy Timer Specific Styles --- */
+.fancy-timer-card {
+  max-width: 400px;
+}
+
+.timer-display {
+  font-size: 4rem;
+  font-family: 'Digital-7 Mono', monospace;
+  color: #00ff00;
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  box-shadow: inset 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.timer-input {
+  width: 100px;
+  padding: 10px;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 5px;
+}
+
+.timer-controls button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  margin: 0 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.timer-controls button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.timer-controls button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.timer-tip {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: 20px;
+}
+
+/* --- Counter Specific Styles --- */
+.counter-card {
+  max-width: 300px;
+}
+
+.counter-label-input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 5px;
+}
+
+.counter-display {
+  font-size: 4rem;
+  color: #ffc107;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.counter-controls button,
+.counter-quick-adjust button {
+  background-color: #6f42c1;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.counter-controls button:hover,
+.counter-quick-adjust button:hover {
+  background-color: #5a2e9b;
+}
+
+/* --- Dice Roller Specific Styles --- */
+.dice-roller-card {
+  max-width: 450px;
+}
+
+.dice-inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.dice-input,
+.num-dice-input {
+  width: 80px;
+  padding: 10px;
+  font-size: 1.2rem;
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 5px;
+}
+
+.dice-inputs span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #eee;
+}
+
+.die-sides-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.die-side-button {
+  background-color: #444;
+  color: #fff;
+  border: 1px solid #666;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  min-width: 50px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.die-side-button:hover {
+  background-color: #666;
+  border-color: #888;
+}
+
+.die-side-button.active {
+  background-color: #00bcd4;
+  border-color: #008fa0;
+  box-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+  font-weight: bold;
+}
+
+.dice-modifier-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+.dice-modifier-input span {
+  font-size: 1.2rem;
+  color: #eee;
+}
+
+.modifier-input {
+  width: 80px;
+}
+
+.roll-button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.roll-button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+.dice-result {
+  margin-top: 25px;
+  font-size: 1.6rem;
+  color: #ffe066;
+  font-weight: bold;
+}
+
+/* --- Generator Specific Styles --- */
+.generator-card {
+  max-width: 500px;
+}
+
+.generator-output {
+  min-height: 80px;
+  background-color: #1a1a1a;
+  border: 1px solid #555;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b0b0b0;
+  font-style: italic;
+}
+
+.generator-card button {
+  background-color: #fd7e14;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.generator-card button:hover {
+  background-color: #e06200;
+}
+
+/* General button styling (apply to all buttons if not overridden by more specific rules) */
+button {
+  font-family: 'Press Start 2P', cursive;
+}
+
+/* --- Coin Flip Specific Styles --- */
+.coin-flip-card {
+  max-width: 300px;
+}
+
+.flip-result {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ffe066;
+  margin-bottom: 30px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-button {
+  background-color: #20c997;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.flip-button:hover {
+  background-color: #17a2b8;
+  transform: translateY(-2px);
+}
+
+.coin-tip {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: 20px;
+}
+
+/* --- Spinning Wheel Specific Styles --- */
+.spinning-wheel-card {
+  max-width: 600px;
+  padding: 30px;
+}
+
+.wheel-container {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin: 0 auto 30px auto;
+  border-radius: 50%;
+  background-color: #333;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wheel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 50%;
+  transition: transform 5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.wheel-segment {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+}
+
+.segment-text {
+  font-family: Arial, sans-serif;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+.wheel-placeholder {
+  font-size: 1.5rem;
+  color: #888;
+  text-align: center;
+  padding: 20px;
+}
+
+.wheel-pointer {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 40px solid #dc3545;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1001;
+}
+
+.wheel-controls {
+  margin-bottom: 25px;
+}
+
+.result-display {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffe066;
+  margin-bottom: 20px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spin-button {
+  background-color: #00bcd4;
+  color: #fff;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.spin-button:hover:not(:disabled) {
+  background-color: #008fa0;
+  transform: translateY(-2px);
+}
+
+.spin-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.choice-management h4 {
+  color: #eee;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.add-choice {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.choice-input {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 5px;
+}
+
+.add-choice-button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.add-choice-button:hover {
+  background-color: #218838;
+}
+
+.choice-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #1a1a1a;
+}
+
+.choice-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border-bottom: 1px solid #2a2a2a;
+  color: #b0b0b0;
+  font-size: 1rem;
+}
+
+.choice-list li:last-child {
+  border-bottom: none;
+}
+
+.remove-choice-button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background-color 0.2s ease;
+}
+
+.remove-choice-button:hover {
+  background-color: #c82333;
+}
+
+.no-choices-msg {
+  color: #888;
+  font-style: italic;
+  margin-top: 15px;
+}
+
+/* --- Soundboard Specific Styles --- */
+.soundboard-card {
+  max-width: 500px;
+  padding: 30px;
+}
+
+.sound-buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.sound-button {
+  background-color: #6a0572;
+  color: #fff;
+  border: none;
+  padding: 15px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 60px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.sound-button:hover {
+  background-color: #8c0791;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+}
+
+.sound-button.playing {
+  background-color: #ffc107;
+  color: #333;
+  animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.7);
+  }
+  to {
+    box-shadow: 0 0 0 10px rgba(255, 193, 7, 0);
+  }
+}
+
+.playing-indicator {
+  margin-left: 8px;
+  font-size: 1.2rem;
+  vertical-align: middle;
+}
+
+.soundboard-tip {
+  color: #bbb;
+  font-style: italic;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* --- Mad Libs About Me Styles --- */
+.madlibs-about-me {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #2a2a2a;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  color: #f0f0f0;
+  text-align: center;
+}
+
+.madlibs-title {
+  color: #e0f7fa;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.madlibs-instruction {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #a0a0a0;
+}
+
+.madlibs-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.madlibs-input-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.madlibs-input-group label {
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #bbb;
+  font-size: 0.95rem;
+}
+
+.madlibs-input-group input[type="text"],
+.madlibs-input-group input[type="number"] {
+  padding: 12px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background-color: #3a3a3a;
+  color: #e0f7fa;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.madlibs-input-group input[type="text"]:focus,
+.madlibs-input-group input[type="number"]:focus {
+  border-color: #e0f7fa;
+  box-shadow: 0 0 0 3px rgba(144, 202, 249, 0.5);
+  outline: none;
+}
+
+.madlibs-buttons {
+  grid-column: 1 / -1;
+  margin-top: 20px;
+}
+
+.madlibs-buttons button,
+.madlibs-story button {
+  background-color: #007bff;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.madlibs-buttons button:hover,
+.madlibs-story button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.madlibs-story {
+  background-color: #1a1a1a;
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid #444;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.madlibs-story p {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: #e0f7fa;
+  margin-bottom: 30px;
+  font-family: 'Georgia', serif;
+  text-align: left;
+}
+
+.madlibs-story button {
+  background-color: #dc3545;
+  margin-top: 20px;
+}
+
+.madlibs-story button:hover {
+  background-color: #c82333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .madlibs-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* --- Do Not Push Button Styles --- */
+.do-not-push-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.do-not-push-button {
+  background-color: #dc3545;
+  color: white;
+  padding: 20px 40px;
+  border: 4px solid #a71d2a;
+  border-radius: 15px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 8px 0 #a71d2a, 0 12px 20px rgba(0, 0, 0, 0.5);
+  transition: all 0.1s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.do-not-push-button:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 0 #a71d2a, 0 15px 25px rgba(0, 0, 0, 0.6);
+}
+
+.do-not-push-button:active {
+  transform: translateY(6px);
+  box-shadow: 0 2px 0 #a71d2a, 0 5px 10px rgba(0, 0, 0, 0.5);
+  background-color: #c82333;
+}
+
+.push-message {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: #f8d7da;
+  font-style: italic;
+  text-align: center;
+  max-width: 300px;
+}
+
+/* --- Games Page Specific Styles (Consolidated) --- */
+.games-page {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 20px auto;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  color: #e0e0e0;
+}
+
+.games-page h1 {
+  color: #e0f7fa;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 3rem;
+}
+
+.games-page h2,
+.ttrpg-section h2,
+.board-games-section h2,
+.card-games-section h2 {
+  color: #90caf9;
+  border-bottom: 2px solid #555;
+  padding-bottom: 10px;
+  margin-top: 40px;
+  margin-bottom: 25px;
+  font-size: 2rem;
+}
+
+.ttrpg-section,
+.board-games-section,
+.card-games-section {
+  margin-bottom: 50px;
+}
+
+.game-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.game-item {
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.game-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.game-item h3 {
+  color: #ffcc80;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.game-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #bbbbbb;
+}
+
+/* --- Doom Embed Specific Styles --- */
+.doom-embed-container {
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #000000;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+.doom-embed-container h2 {
+  color: #ff0000;
+  font-size: 2.5rem;
+  text-shadow: 0 0 10px #ff0000;
+  margin-bottom: 15px;
+  border-bottom: none;
+}
+
+.doom-embed-container p {
+  color: #f0f0f0;
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.doom-embed-container iframe {
+  max-width: 100%;
+  height: 666px;
+  display: block;
+  margin: 0 auto;
+  border: 2px solid #ff0000;
+  border-radius: 5px;
+}
+
+/* Responsive adjustments for Games Page & Doom (Consolidated) */
+@media (max-width: 768px) {
+  .games-page {
+    padding: 15px;
+  }
+  .games-page h1 {
+    font-size: 2.5rem;
+  }
+  .games-page h2 {
+    font-size: 1.8rem;
+  }
+  .game-item h3 {
+    font-size: 1.2rem;
+  }
+  .doom-embed-container h2 {
+    font-size: 2rem;
+  }
+}
+
+/* --- Push Me Button Styles --- */
+.push-me-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.push-me-button {
+  background-color: #28a745;
+  color: white;
+  padding: 20px 40px;
+  border: 4px solid #1e7e34;
+  border-radius: 15px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 8px 0 #1e7e34, 0 12px 20px rgba(0, 0, 0, 0.5);
+  transition: all 0.1s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: 'Press Start 2P', cursive;
+  transform: translateZ(0);
+}
+
+.push-me-button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 0 #1e7e34, 0 15px 25px rgba(0, 0, 0, 0.6);
+}
+
+.push-me-button:active {
+  transform: translateY(6px);
+  box-shadow: 0 2px 0 #1e7e34, 0 5px 10px rgba(0, 0, 0, 0.5);
+  background-color: #218838;
+}
+
+/* Keyframes for the silly bounce animation */
+@keyframes silly-bounce {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  15% {
+    transform: translateY(-15px) rotate(-5deg);
+  }
+  30% {
+    transform: translateY(0) rotate(5deg);
+  }
+  45% {
+    transform: translateY(-10px) rotate(-3deg);
+  }
+  60% {
+    transform: translateY(0) rotate(3deg);
+  }
+  75% {
+    transform: translateY(-5px) rotate(-1deg);
+  }
+  90% {
+    transform: translateY(0) rotate(1deg);
+  }
+}
+
+.push-me-button.animating {
+  animation: silly-bounce 0.6s ease-out;
+}
+
+/* --- Altar of Khorne Styles --- */
+.altar-of-khorne-container {
+  background-color: #1a0000;
+  border: 3px solid #6b0000;
+  border-radius: 12px;
+  padding: 30px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
+  text-align: center;
+  color: #e0e0e0;
+}
+
+.altar-of-khorne-container h2 {
+  color: #ff3333;
+  font-size: 2.5rem;
+  text-shadow: 0 0 10px rgba(255, 51, 51, 0.8);
+  margin-bottom: 20px;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.altar-of-khorne-container p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: #cccccc;
+}
+
+.khorne-icon {
+  width: 120px;
+  height: auto;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.7));
+}
+
+.khorne-button {
+  background-color: #cc0000;
+  color: white;
+  padding: 15px 25px;
+  border: 3px solid #800000;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 0 #800000, 0 8px 15px rgba(0, 0, 0, 0.4);
+  transition: all 0.15s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.khorne-button:hover {
+  background-color: #e60000;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 0 #800000, 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.khorne-button:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #800000, 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Initiative Tracker Styles --- */
+.initiative-tracker-container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 25px;
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  color: #f0f0f0;
+  font-family: 'Arial', sans-serif;
+}
+
+.initiative-tracker-container h2 {
+  text-align: center;
+  color: #e0e0e0;
+  margin-bottom: 25px;
+  font-size: 2.2rem;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.add-combatant-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.add-combatant-form input[type="text"],
+.add-combatant-form input[type="number"] {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: #3a3a3a;
+  color: #e0e0e0;
+  font-size: 1rem;
+  min-width: 150px;
+}
+
+.add-combatant-form input::placeholder {
+  color: #aaa;
+}
+
+.add-button {
+  padding: 12px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.add-button:hover {
+  background-color: #45a049;
+}
+
+.tracker-controls {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.tracker-controls button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  min-width: 120px;
+}
+
+.tracker-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sort-button {
+  background-color: #007bff;
+  color: white;
+}
+.sort-button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.next-turn-button {
+  background-color: #ffc107;
+  color: #333;
+}
+.next-turn-button:hover:not(:disabled) {
+  background-color: #e0a800;
+}
+
+.reset-button {
+  background-color: #dc3545;
+  color: white;
+}
+.reset-button:hover:not(:disabled) {
+  background-color: #c82333;
+}
+
+.combatant-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 25px;
+}
+
+.combatant-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  margin-bottom: 8px;
+  background-color: #3a3a3a;
+  border: 1px solid #555;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.combatant-list li.current-turn {
+  background-color: #4CAF50;
+  border-color: #28a745;
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
+  font-weight: bold;
+  color: white;
+}
+
+.combatant-info {
+  flex-grow: 1;
+}
+
+.remove-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  line-height: 1;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.remove-button:hover {
+  background-color: #c82333;
+}
+
+.no-combatants-message {
+  text-align: center;
+  color: #aaa;
+  font-style: italic;
+  padding: 20px;
+  border: 1px dashed #555;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+/* In your CSS file (e.g., index.css, App.css) */
+
+/* Styles for the availability marker inside the tile */
+.availability-marker {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  position: absolute; /* Allows for precise positioning */
+  bottom: 5px;       /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.availability-marker.available {
+  background-color: #28a745; /* Green for available */
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.7);
+}
+
+/* Styles for the entire calendar tile when available */
+.react-calendar__tile--available {
+  background-color: rgba(40, 167, 69, 0.2) !important; /* Light green background */
+  border: 1px solid #28a745 !important; /* Green border */
+  border-radius: 8px; /* Slightly rounded corners for the tile */
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.react-calendar__tile--available:hover {
+  background-color: rgba(40, 167, 69, 0.3) !important;
+}
+
+/* Legend for the calendar */
+.legend {
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.legend-item {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 4px;
+}
+
+.available-legend {
+  background-color: rgba(40, 167, 69, 0.2);
+  border: 1px solid #28a745;
+}
+
+.gaming-tools-container h1 {
+  color: #333; /* A dark gray, good for readability */
+  /* Or a darker color that fits your theme, e.g., #000 (black), #0056b3 (dark blue) */
+}
