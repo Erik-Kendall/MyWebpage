@@ -1,0 +1,892 @@
+/* src/pages/GamingTools.css - Merged and Cleaned */
+/* These styles are specifically for the GamingTools page and its child components */
+
+.gaming-tools-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gaming-tools-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    /* Specific styling for the Gaming Tools H1 for better visibility and accessibility */
+    color: #00bcd4; /* A bright, distinct teal for contrast */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Adds subtle depth for readability */
+    font-size: 3rem; /* Ensure it's a prominent title */
+}
+
+/* Tool Navigation Bar */
+.tool-navigation {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+    background-color: #333;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tool-navigation button {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    flex-grow: 1; /* Allow buttons to grow and fill space */
+    min-width: 150px; /* Ensure minimum width for readability */
+}
+
+.tool-navigation button:hover {
+    background-color: #777;
+    transform: translateY(-2px);
+}
+
+.tool-navigation button.active {
+    background-color: #8a2be2; /* Active button color (e.g., a vibrant purple) */
+    box-shadow: 0 0 15px #8a2be288; /* Subtle glow for active button */
+}
+
+/* Area where the active tool component is displayed */
+.tool-display-area {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+/* Generic Card styling for all gaming tools */
+.tool-card {
+    background-color: #2a2a2a; /* Darker background for tool cards */
+    border: 1px solid #444;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 100%;
+    max-width: 450px; /* Default max width for cards */
+    color: #f0f0f0; /* Light text color for contrast */
+}
+
+.tool-card h3 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #00bcd4; /* Accent color for tool titles */
+    font-size: 1.8rem;
+}
+
+/* General button styling for all tool components */
+button {
+    font-family: 'Press Start 2P', cursive; /* Apply retro font to all buttons */
+}
+
+
+/* --- Timezone Translator Specific Styles --- */
+.timezone-translator-card {
+    background-color: #f8f9fa; /* Light background for the card */
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px; /* Space above the component if not already provided by Container margin */
+}
+
+.timezone-translator-card .card-title {
+    color: #343a40; /* Darker text for title */
+}
+
+/* Ensure form elements have proper spacing within the card */
+.timezone-translator-card .form-group {
+    margin-bottom: 1rem;
+}
+
+/* Style for the list of converted times */
+.timezone-translator-card .list-group-item {
+    background-color: #fff;
+    border-color: #e9ecef;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.timezone-translator-card .list-group-item.bg-info {
+    background-color: #17a2b8 !important; /* Override default Bootstrap info color for better contrast */
+    color: white !important;
+}
+
+.timezone-translator-card .list-group-item strong {
+    color: #343a40; /* Darker text for timezone names */
+}
+
+.timezone-translator-card .list-group-item.bg-info strong {
+    color: white !important; /* Ensure strong text is white in active row */
+}
+
+
+/* --- Calculator Specific Styles --- */
+.calculator-card {
+    max-width: 350px; /* Smaller max-width for calculator */
+}
+
+.calc-display {
+    width: calc(100% - 20px);
+    padding: 15px;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    text-align: right;
+    background-color: #1a1a1a;
+    border: 1px solid #555;
+    border-radius: 5px;
+    color: #fff;
+    font-family: 'Roboto Mono', monospace; /* Monospace font for calculator display */
+}
+
+.calc-result {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #b0b0b0;
+}
+
+.calc-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.calc-button {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 18px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.calc-button:hover {
+    background-color: #666;
+}
+
+.calc-button.operator {
+    background-color: #8a2be2; /* Purple for operators */
+}
+
+.calc-button.operator:hover {
+    background-color: #a040f0;
+}
+
+.calc-button.clear-btn {
+    background-color: #dc3545; /* Red for clear button */
+}
+
+.calc-button.clear-btn:hover {
+    background-color: #c82333;
+}
+
+.calc-button[onclick*="handleCalculate"] {
+    background-color: #28a745; /* Green for equals button */
+    grid-column: span 2; /* Make equals button span two columns */
+}
+
+.calc-button[onclick*="handleCalculate"]:hover {
+    background-color: #218838;
+}
+
+.calc-tip {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-top: 15px;
+}
+
+/* --- Fancy Timer Specific Styles --- */
+.fancy-timer-card {
+    max-width: 400px;
+}
+
+.timer-display {
+    font-size: 4rem;
+    font-family: 'Digital-7 Mono', monospace; /* Digital font for timer display */
+    color: #00ff00; /* Green for timer display */
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: inset 0 0 10px rgba(0, 255, 0, 0.5); /* Inner glow */
+}
+
+.timer-input {
+    width: 100px;
+    padding: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 5px;
+}
+
+.timer-controls button {
+    background-color: #007bff; /* Blue for timer controls */
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    margin: 0 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.timer-controls button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+.timer-controls button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+.timer-tip {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-top: 20px;
+}
+
+/* --- Counter Specific Styles --- */
+.counter-card {
+    max-width: 300px;
+}
+
+.counter-label-input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 5px;
+}
+
+.counter-display {
+    font-size: 4rem;
+    color: #ffc107; /* Yellow for counter display */
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.counter-controls button,
+.counter-quick-adjust button {
+    background-color: #6f42c1; /* Purple for counter buttons */
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.counter-controls button:hover,
+.counter-quick-adjust button:hover {
+    background-color: #5a2e9b;
+}
+
+/* --- Dice Roller Specific Styles --- */
+.dice-roller-card {
+    max-width: 450px;
+}
+
+.dice-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.dice-input,
+.num-dice-input {
+    width: 80px;
+    padding: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 5px;
+}
+
+.dice-inputs span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #eee;
+}
+
+.die-sides-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.die-side-button {
+    background-color: #444;
+    color: #fff;
+    border: 1px solid #666;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    min-width: 50px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.die-side-button:hover {
+    background-color: #666;
+    border-color: #888;
+}
+
+.die-side-button.active {
+    background-color: #00bcd4;
+    border-color: #008fa0;
+    box-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+    font-weight: bold;
+}
+
+.dice-modifier-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+.dice-modifier-input span {
+    font-size: 1.2rem;
+    color: #eee;
+}
+
+.modifier-input {
+    width: 80px;
+}
+
+.roll-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.4rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.roll-button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.dice-result {
+    margin-top: 25px;
+    font-size: 1.6rem;
+    color: #ffe066;
+    font-weight: bold;
+}
+
+/* --- Generator Specific Styles --- */
+.generator-card {
+    max-width: 500px;
+}
+
+.generator-output {
+    min-height: 80px;
+    background-color: #1a1a1a;
+    border: 1px solid #555;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #b0b0b0;
+    font-style: italic;
+}
+
+.generator-card button {
+    background-color: #fd7e14;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.generator-card button:hover {
+    background-color: #e06200;
+}
+
+/* --- Coin Flip Specific Styles --- */
+.coin-flip-card {
+    max-width: 300px;
+}
+
+.flip-result {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffe066;
+    margin-bottom: 30px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flip-button {
+    background-color: #20c997;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.4rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.flip-button:hover {
+    background-color: #17a2b8;
+    transform: translateY(-2px);
+}
+
+.coin-tip {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-top: 20px;
+}
+
+/* --- Spinning Wheel Specific Styles --- */
+.spinning-wheel-card {
+    max-width: 600px;
+    padding: 30px;
+}
+
+.wheel-container {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    margin: 0 auto 30px auto;
+    border-radius: 50%;
+    background-color: #333;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wheel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 50%;
+    transition: transform 5s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.wheel-segment {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+}
+
+.segment-text {
+    font-family: Arial, sans-serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+.wheel-placeholder {
+    font-size: 1.5rem;
+    color: #888;
+    text-align: center;
+    padding: 20px;
+}
+
+.wheel-pointer {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 40px solid #dc3545;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+}
+
+.wheel-controls {
+    margin-bottom: 25px;
+}
+
+.result-display {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffe066;
+    margin-bottom: 20px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spin-button {
+    background-color: #00bcd4;
+    color: #fff;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.spin-button:hover:not(:disabled) {
+    background-color: #008fa0;
+    transform: translateY(-2px);
+}
+
+.spin-button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+.choice-management h4 {
+    color: #eee;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.add-choice {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.choice-input {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 5px;
+}
+
+.add-choice-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.add-choice-button:hover {
+    background-color: #218838;
+}
+
+.choice-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+}
+
+.choice-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #2a2a2a;
+    color: #b0b0b0;
+    font-size: 1rem;
+}
+
+.choice-list li:last-child {
+    border-bottom: none;
+}
+
+.remove-choice-button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background-color 0.2s ease;
+}
+
+.remove-choice-button:hover {
+    background-color: #c82333;
+}
+
+.no-choices-msg {
+    color: #888;
+    font-style: italic;
+    margin-top: 15px;
+}
+
+/* --- Soundboard Specific Styles --- */
+.soundboard-card {
+    max-width: 500px;
+    padding: 30px;
+}
+
+.sound-buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.sound-button {
+    background-color: #6a0572;
+    color: #fff;
+    border: none;
+    padding: 15px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 60px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.sound-button:hover {
+    background-color: #8c0791;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+}
+
+.sound-button.playing {
+    background-color: #ffc107;
+    color: #333;
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.7);
+    }
+    to {
+        box-shadow: 0 0 0 10px rgba(255, 193, 7, 0);
+    }
+}
+
+.playing-indicator {
+    margin-left: 8px;
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+
+.soundboard-tip {
+    color: #bbb;
+    font-style: italic;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* --- Initiative Tracker Styles --- */
+.initiative-tracker-container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
+}
+
+.initiative-tracker-container h2 {
+    text-align: center;
+    color: #e0e0e0;
+    margin-bottom: 25px;
+    font-size: 2.2rem;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.add-combatant-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.add-combatant-form input[type="text"],
+.add-combatant-form input[type="number"] {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #3a3a3a;
+    color: #e0e0e0;
+    font-size: 1rem;
+    min-width: 150px;
+}
+
+.add-combatant-form input::placeholder {
+    color: #aaa;
+}
+
+.add-button {
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.add-button:hover {
+    background-color: #45a049;
+}
+
+.tracker-controls {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.tracker-controls button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    min-width: 120px;
+}
+
+.tracker-controls button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.sort-button {
+    background-color: #007bff;
+    color: white;
+}
+.sort-button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+.next-turn-button {
+    background-color: #ffc107;
+    color: #333;
+}
+.next-turn-button:hover:not(:disabled) {
+    background-color: #e0a800;
+}
+
+.reset-button {
+    background-color: #dc3545;
+    color: white;
+}
+.reset-button:hover:not(:disabled) {
+    background-color: #c82333;
+}
+
+.combatant-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 25px;
+}
+
+.combatant-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    background-color: #3a3a3a;
+    border: 1px solid #555;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.combatant-list li.current-turn {
+    background-color: #4CAF50;
+    border-color: #28a745;
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
+    font-weight: bold;
+    color: white;
+}
+
+.combatant-info {
+    flex-grow: 1;
+}
+
+.remove-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 8px;
+    line-height: 1;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.remove-button:hover {
+    background-color: #c82333;
+}
+
+.no-combatants-message {
+    text-align: center;
+    color: #aaa;
+    font-style: italic;
+    padding: 20px;
+    border: 1px dashed #555;
+    border-radius: 5px;
+    margin-top: 20px;
+}

@@ -1,0 +1,1043 @@
+/* src/App.css - COMPLETE & CORRECTED FILE */
+/* MAD LIBS PAGE STYLES */
+body.colorblind-mode-active .madlibs-about-me { /* Target the main container */
+  background-color: #000 !important; /* Force black background */
+  color: #FFD700 !important; /* Force gold text */
+  /* Add any other specific styles like border, box-shadow if they exist */
+}
+
+body.colorblind-mode-active .madlibs-about-me h1 {
+  color: #FFD700 !important; /* Gold text for heading */
+}
+
+body.colorblind-mode-active .madlibs-input-group {
+  background-color: #222 !important; /* Darker background for input groups */
+  border-color: #666 !important;
+}
+
+body.colorblind-mode-active .madlibs-input-group label {
+  color: #FFD700 !important; /* Gold text for labels */
+}
+
+body.colorblind-mode-active .madlibs-input-group input[type="text"],
+body.colorblind-mode-active .madlibs-input-group input[type="number"] {
+  background-color: #333 !important; /* Darker input fields */
+  color: #FFD700 !important;
+  border-color: #FFD700 !important;
+}
+
+/* And so on for other specific elements like your Junimo sprites if they are CSS-based */
+/* You might need to change their filter property to desaturate/recolor */
+/* For images: */
+body.colorblind-mode-active img {
+  filter: grayscale(100%) brightness(0.8) sepia(1) hue-rotate(50deg) saturate(2); /* Example filter for goldish grayscale */
+}
+/* --- GLOBAL BASE STYLES --- */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif; /* A default font */
+  line-height: 1.6;
+  background-color: #f0f0f0; /* Default background for the entire site */
+  color: #333; /* Default text color for a light background */
+  transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition for colorblind mode */
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures #root takes at least full viewport height */
+  position: relative;
+  /* Removed background-color here to let html/body control it globally */
+}
+
+/* --- COLORBLIND MODE GLOBAL OVERRIDES --- */
+body.colorblind-mode-active {
+  background-color: #000 !important; /* Black background for colorblind mode, forced */
+  color: #FFD700 !important; /* Gold text for colorblind mode, forced */
+}
+
+/* Ensure any elements that should *not* change color with the global body color are explicitly set */
+.khorne-button {
+  color: white; /* Explicitly set to white */
+}
+.do-not-push-button {
+  color: white; /* Explicitly set to white */
+}
+.surprise-button {
+  color: #333; /* Explicitly set */
+}
+.mystery-button {
+  color: #eee; /* Explicitly set */
+}
+
+
+/* --- APP LAYOUT & CONTENT --- */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-area { /* Appears to be a main content wrapper */
+  flex-grow: 1; /* Allows it to take up available space */
+  padding: 1rem;
+  margin: 1rem auto;
+  max-width: 960px; /* Example max width */
+  width: 100%; /* Ensure it fills parent */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* --- HOME PAGE SPECIFIC STYLES (.content is the section in Home.jsx) --- */
+.content { /* This is the section in Home.jsx */
+  max-width: 800px;
+  margin: 1rem auto;
+  padding: 1rem;
+  border: 2px solid #444;
+  border-radius: 8px;
+  text-align: center;
+  box-sizing: border-box; /* Crucial for responsive padding */
+
+  /* Default background for the content section */
+  background-color: #fff; /* White background for content */
+  color: #000; /* Black text */
+  transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition */
+}
+/* Adjustments for the content section's background/color when colorblind mode is active */
+body.colorblind-mode-active .content {
+  background-color: #333 !important; /* Darker background for content box in colorblind mode for contrast, forced */
+  color: #FFD700 !important; /* Gold text, forced */
+}
+
+/* --- NAVIGATION / TOOL NAVIGATION --- */
+.nav-tabs .nav-item {
+  list-style-type: none; /* Removes the default bullet point */
+}
+
+.nav-tabs .nav-link {
+  background-color: #e9ecef; /* Default tab background */
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem 0.25rem 0 0;
+  color: #495057;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: #fff; /* Active tab background */
+  border-color: #dee2e6 #dee2e6 #fff;
+  color: #495057;
+}
+
+.nav-tabs .nav-link:hover {
+  border-color: #e9ecef #e9ecef #dee2e6;
+}
+
+
+/* Styling for general buttons (like Gaming Tools buttons) */
+.tool-navigation button {
+  background-color: #6c757d; /* Dark grey */
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  margin: 5px;
+  flex-grow: 1; /* Allow buttons to grow */
+  min-width: 150px; /* Minimum width for buttons */
+}
+
+.tool-navigation button:hover {
+  background-color: #5a6268;
+}
+
+.tool-navigation button.active {
+  background-color: #8a2be2; /* BlueViolet from screenshot */
+}
+
+/* --- HOME PAGE BUTTONS (Existing ones from earlier context) --- */
+.home-buttons-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.existing-button {
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.existing-button:hover {
+  background-color: #0097a7;
+  transform: translateY(-2px);
+}
+
+/* --- SPECIAL BUTTONS (Do Not Push, Push Me!, Mystery, Surprise!) --- */
+.special-buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+  align-items: center;
+  width: 100%;
+}
+
+/* Do Not Push Button */
+.do-not-push-button {
+  background-color: #d32f2f;
+  color: white; /* Explicitly set to white */
+  border: 3px dashed #ffeb3b;
+  padding: 18px 35px;
+  border-radius: 12px;
+  cursor: not-allowed;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  animation: pulseRed 2s infinite ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  pointer-events: auto;
+  display: block;
+  width: fit-content;
+  max-width: 90%;
+}
+
+.do-not-push-button:hover {
+  background-color: #b71c1c;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* Push Me Button Wrapper & Button */
+.push-me-button-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+/* Push Me Button styles */
+.push-me-button {
+  background-color: #28a745;
+  color: white;
+  padding: 20px 40px;
+  border: 4px solid #1e7e34;
+  border-radius: 15px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 8px 0 #1e7e34, 0 12px 20px rgba(0, 0, 0, 0.5);
+  transition: all 0.1s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: 'Press Start 2P', cursive; /* Requires import */
+  transform: translateZ(0); /* For 3D layering consistency */
+}
+
+.push-me-button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 0 #1e7e34, 0 15px 25px rgba(0, 0, 0, 0.6);
+}
+
+.push-me-button:active {
+  transform: translateY(6px);
+  box-shadow: 0 2px 0 #1e7e34, 0 5px 10px rgba(0, 0, 0, 0.5);
+  background-color: #218838;
+}
+
+.push-me-button.animating {
+  animation: silly-bounce 0.6s ease-out;
+}
+
+.push-me-message {
+  margin-top: 0;
+  font-size: 1.1rem;
+  color: #4CAF50;
+  font-weight: bold;
+  animation: fadeIn 0.5s ease-out;
+  max-width: 300px;
+  text-align: center;
+}
+
+/* New Extra Buttons Section */
+.new-extra-buttons-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+  align-items: center;
+  width: 100%;
+}
+
+/* Mystery Button */
+.mystery-button {
+  background-color: #555;
+  color: #eee; /* Explicitly set */
+  border: 2px solid #a0a0a0;
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: help;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: fit-content;
+  max-width: 90%;
+}
+
+.mystery-button:hover {
+  background-color: #404040;
+  border-color: #fff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Surprise Button Group & Button */
+.surprise-button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.surprise-button {
+  background-color: #ffc107;
+  color: #333; /* Explicitly set */
+  border: none;
+  padding: 18px 40px;
+  border-radius: 50px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  animation: popAndShrink 2s infinite ease-in-out;
+  width: fit-content;
+  max-width: 90%;
+}
+
+.surprise-button:hover {
+  background-color: #ffa000;
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.surprise-message {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #ffc107;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.5s ease-out;
+  max-width: 350px;
+  text-align: center;
+}
+
+/* --- KHORNE ALTAR STYLES --- */
+.altar-of-khorne-container {
+  background-color: #1a0000;
+  border: 3px solid #6b0000;
+  border-radius: 12px;
+  padding: 30px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
+  text-align: center;
+  color: #e0e0e0;
+}
+
+.khorne-laugh-title { /* Old title, if still in use */
+  font-size: 3rem;
+  text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.8);
+  margin-bottom: 20px;
+  font-family: 'Impact', sans-serif;
+  color: #ff4500;
+}
+
+.altar-of-khorne-container h2 { /* This is the more specific Khorne title, will override .khorne-laugh-title if both are applied to the same h2 */
+  color: #ff3333;
+  font-size: 2.5rem;
+  text-shadow: 0 0 10px rgba(255, 51, 51, 0.8);
+  margin-bottom: 20px;
+  font-family: 'Press Start 2P', cursive; /* Requires import */
+}
+
+.khorne-laugh-message { /* Old message, if still in use */
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  color: #ff9999;
+}
+
+.altar-of-khorne-container p { /* More specific paragraph for Khorne, overrides general p */
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: #cccccc;
+}
+
+.khorne-laugh-page-container audio { /* Old audio container, if still in use */
+  width: 80%;
+  max-width: 500px;
+  margin-bottom: 30px;
+}
+
+/* Back Button (might be used generally, or specifically for Khorne) */
+.back-button {
+  background-color: #800000;
+  color: white;
+  border: 2px solid #ff0000;
+  padding: 12px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.back-button:hover {
+  background-color: #ff0000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  border-color: white;
+}
+
+.khorne-icon {
+  width: 120px; /* Consolidating to this size */
+  height: auto;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.7));
+}
+
+/* Khorne Button Specific */
+.khorne-buttons-group {
+  margin-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.khorne-button {
+  background-color: #cc0000;
+  color: white;
+  padding: 15px 25px;
+  border: 3px solid #800000;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 0 #800000, 0 8px 15px rgba(0, 0, 0, 0.4);
+  transition: all 0.15s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Press Start 2P', cursive; /* Requires import */
+}
+
+.khorne-button:hover {
+  background-color: #e60000;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 0 #800000, 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.khorne-button:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #800000, 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+
+/* --- MAD LIBS ABOUT ME PAGE STYLES --- */
+/* General Mad Libs Page Container */
+.madlibs-outer-container {
+  position: relative; /* IMPORTANT: Banners will be absolutely positioned relative to this */
+  width: fit-content; /* Make wrapper fit content width */
+  max-width: 1200px; /* Adjust as needed for total width including banners */
+  margin: 40px auto; /* Center this entire container on the page */
+  display: flex; /* Use flexbox to center the card within this wrapper */
+  justify-content: center; /* Center the madlibs-about-me-card horizontally */
+  align-items: flex-start; /* Align card to the top */
+  padding-left: 100px; /* Space for the left banner (banner width + gap) */
+  padding-right: 100px; /* Space for the right banner (banner width + gap) */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Mad Libs Card */
+.madlibs-about-me-card {
+  width: 800px;
+  padding: 30px;
+  background-color: #2a2a2a; /* Dark background for the card itself */
+  color: #f0f0f0; /* Light text for card */
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border: 2px solid #555;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.madlibs-about-me-card::before { /* For the pattern background */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: repeating-linear-gradient(
+          45deg,
+          rgba(255, 255, 255, 0.05) 0px,
+          rgba(255, 255, 255, 0.05) 2px,
+          transparent 2px,
+          transparent 4px
+  );
+  z-index: -1;
+  opacity: 0.2;
+}
+
+.madlibs-title {
+  font-size: 2.5rem;
+  color: #00bcd4; /* Cyan color */
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.madlibs-instruction {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #b0b0b0;
+}
+
+.madlibs-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+  position: relative; /* For positioning Junimo within the form */
+}
+
+.madlibs-input-group {
+  text-align: left;
+}
+
+.madlibs-input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #ddd;
+}
+
+.madlibs-input-group input[type="text"],
+.madlibs-input-group input[type="number"] {
+  width: calc(100% - 20px); /* Account for padding */
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: #3a3a3a;
+  color: #f0f0f0;
+  font-size: 1rem;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.madlibs-buttons {
+  grid-column: 1 / -1; /* Make button span all columns */
+  text-align: center;
+  margin-top: 20px;
+}
+
+.madlibs-buttons button,
+.madlibs-story button {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.madlibs-buttons button:hover,
+.madlibs-story button:hover {
+  background-color: #45a049;
+}
+
+.madlibs-story {
+  background-color: #333;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+  white-space: pre-wrap; /* Preserves whitespace and line breaks */
+  text-align: left;
+  line-height: 1.6;
+  font-size: 1.15rem;
+  color: #e0e0e0;
+  position: relative; /* For positioning Junimo at the bottom of story */
+}
+
+.madlibs-story p {
+  margin-bottom: 25px;
+}
+
+/* --- Soot Sprites & Bottom Junimo Styles --- */
+.soot-sprite-left,
+.soot-sprite-right {
+  height: 80px; /* Soot sprites are 80px tall */
+  width: auto;
+  vertical-align: middle;
+  animation: bounce 2s infinite ease-in-out;
+  filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.7)); /* White shadow for visibility */
+}
+
+.soot-sprite-left {
+  margin-right: 10px;
+}
+
+.soot-sprite-right {
+  margin-left: 10px;
+}
+
+.junimo-bottom {
+  position: absolute;
+  bottom: -30px; /* Adjust to be below the container */
+  left: 50%;
+  transform: translateX(-50%);
+  height: 60px; /* Explicitly set size for the bottom Junimo (e.g., the pair) */
+  width: auto;
+  z-index: 10; /* Ensure it's above other elements if needed */
+  animation: float 3s infinite ease-in-out;
+  filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.5)); /* Adding a subtle black shadow */
+}
+
+/* --- Side Junimo Banners Styles (ABSOLUTE POSITIONING) --- */
+.junimo-banner {
+  position: absolute; /* Positioned relative to .madlibs-outer-container */
+  top: 0; /* Align to the top of the outer container */
+  height: 100%; /* Take full height of the outer container */
+  display: flex;
+  flex-direction: column; /* Stack Junimos vertically */
+  justify-content: space-around; /* Distribute Junimos evenly */
+  align-items: center;
+  width: 80px; /* Width of the banner area */
+  z-index: 0; /* Place behind the main MadLibs card */
+  padding: 10px 0; /* Vertical padding inside the banner */
+}
+
+.junimo-banner.left {
+  right: calc(50% + 400px + 20px); /* Right edge of banner = 50% (center of page) + half card width (400px) + gap (20px) */
+  /* This positions the left banner to the LEFT of the main card with a gap */
+}
+
+.junimo-banner.right {
+  left: calc(50% + 400px + 20px); /* Left edge of banner = 50% (center of page) + half card width (400px) + gap (20px) */
+  /* This positions the right banner to the RIGHT of the main card with a gap */
+}
+
+.junimo-side-sprite {
+  width: 60px; /* Set a consistent size for individual Junimos in side banners */
+  height: auto;
+  object-fit: contain; /* Ensure image fits without distortion */
+  margin: 10px 0; /* Space between individual Junimos */
+  filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.5)); /* Adding a subtle black shadow for visibility */
+}
+
+
+/* --- QUICK LINKS CARD --- */
+.content.quick-links-silly-style {
+  background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+  background-color: #ffe6f0;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 10px 10px 0px 0px #ffb3d9, 20px 20px 0px 0px #ff80bf;
+  margin: 20px;
+  animation: bounceIn 1s ease-out;
+  text-align: center;
+}
+
+.content.quick-links-silly-style h1 {
+  font-family: 'Comic Neue', cursive;
+  color: #8a2be2;
+  text-align: center;
+  font-size: 3.5rem;
+  text-shadow: 4px 4px #ffcce6;
+  margin-bottom: 2rem;
+  transform: rotate(-3deg);
+  animation: jiggle infinite 5s linear;
+}
+
+.content.quick-links-silly-style ul {
+  list-style-type: '🥳 ';
+  padding-left: 2rem;
+}
+
+.content.quick-links-silly-style li {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0.8rem 1.2rem;
+  border-radius: 25px;
+  border: 2px dashed #ff66b2;
+  box-shadow: 3px 3px 0px #ffcce6;
+  transition: all 0.2s ease-in-out;
+}
+
+.content.quick-links-silly-style li:hover {
+  transform: scale(1.05) rotate(2deg);
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 5px 5px 0px #ff80bf;
+}
+
+.content.quick-links-silly-style a {
+  color: #d10000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.content.quick-links-silly-style a:hover {
+  text-decoration: underline wavy #8a2be2;
+  color: #4b0082;
+}
+
+
+/* --- TIMEZONE TRANSLATOR STYLES --- */
+.timezone-translator-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.timezone-translator-container h2 {
+  margin-bottom: 25px;
+  color: #333;
+  font-size: 1.8rem;
+}
+
+.timezone-input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align labels left */
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.timezone-input-group label {
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.timezone-input-group input[type="text"],
+.timezone-input-group input[type="datetime-local"],
+.timezone-input-group select { /* Assuming a select for timezone dropdown */
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.timezone-input-group input[type="date"]::-webkit-calendar-picker-indicator,
+.timezone-input-group input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
+
+.convert-button {
+  background-color: #007bff; /* Blue button */
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.convert-button:hover {
+  background-color: #0056b3;
+}
+
+/* --- ANIMATIONS (All should be in App.css, consolidated) --- */
+@keyframes jiggle {
+  0% { transform: rotate(0deg) translate(0, 0); }
+  25% { transform: rotate(1deg) translate(1px, -1px); }
+  50% { transform: rotate(0deg) translate(0, 0); }
+  75% { transform: rotate(-1deg) translate(-1px, 1px); }
+  100% { transform: rotate(0deg) translate(0, 0); }
+}
+
+@keyframes super-jiggle {
+  0% { transform: rotate(0deg) translate(0, 0); }
+  25% { transform: rotate(3deg) translate(3px, -3px); }
+  50% { transform: rotate(0deg) translate(0, 0); }
+  75% { transform: rotate(-3deg) translate(-3px, 3px); }
+  100% { transform: rotate(0deg) translate(0, 0); }
+}
+
+/* src/App.css */
+
+/* ... existing styles ... */
+
+/* Site-wide Shake Animation */
+@keyframes site-shake {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px) translateY(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px) translateY(5px); }
+}
+
+.app-container.site-shake {
+  animation: site-shake 0.1s ease-in-out infinite;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+/* ... rest of your App.css content ... */
+
+@keyframes pulseRed {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  }
+}
+
+@keyframes bounceGreen {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popAndShrink { /* For .surprise-button */
+  0%, 100% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(1.05); /* Pop out slightly */
+  }
+  20% {
+    transform: scale(0.98); /* Shrink slightly */
+  }
+  30% {
+    transform: scale(1);
+  }
+  50%, 70% {
+    transform: scale(1); /* Pause */
+  }
+}
+
+@keyframes silly-bounce { /* For .push-me-button.animating */
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  15% {
+    transform: translateY(-15px) rotate(-5deg);
+  }
+  30% {
+    transform: translateY(0) rotate(5deg);
+  }
+  45% {
+    transform: translateY(-10px) rotate(-3deg);
+  }
+  60% {
+    transform: translateY(0) rotate(3deg);
+  }
+  75% {
+    transform: translateY(-5px) rotate(-1deg);
+  }
+  90% {
+    transform: translateY(0) rotate(1deg);
+  }
+}
+
+@keyframes pulseGlow { /* For .games-page h1 */
+  from {
+    text-shadow:
+            0 0 10px rgba(255, 204, 0, 0.7),
+            0 0 20px rgba(255, 204, 0, 0.5),
+            0 0 30px rgba(255, 204, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  }
+  to {
+    text-shadow:
+            0 0 15px rgba(255, 204, 0, 0.9),
+            0 0 25px rgba(255, 204, 0, 0.7),
+            0 0 40px rgba(255, 204, 0, 0.5);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  }
+}
+
+@keyframes bounceIn { /* For .content.quick-links-silly-style */
+  0% {
+    opacity: 0;
+    transform: scale(0.3) rotate(-5deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05) rotate(2deg);
+  }
+  70% {
+    transform: scale(0.95) rotate(-1deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes bounce { /* For .soot-sprite-left, .soot-sprite-right */
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes float { /* For .junimo-bottom */
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-7px);
+  }
+}
+
+
+/* --- RESPONSIVE ADJUSTMENTS (Consolidated) --- */
+@media (max-width: 768px) {
+  .content-area {
+    padding: 0.5rem;
+    margin: 0.5rem auto;
+  }
+  .tool-navigation button {
+    min-width: unset;
+    width: 100%; /* Full width on small screens */
+    margin: 5px 0;
+  }
+  .home-buttons-group,
+  .special-buttons-container,
+  .new-extra-buttons-section {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  .existing-button,
+  .do-not-push-button,
+  .push-me-button,
+  .mystery-button,
+  .surprise-button {
+    width: 90%;
+    max-width: 300px;
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+  .surprise-button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+  }
+  .surprise-message {
+    font-size: 1rem;
+    max-width: 250px;
+  }
+  .altar-of-khorne-container {
+    padding: 20px;
+    margin: 10px auto;
+  }
+  .khorne-laugh-title, .altar-of-khorne-container h2 { /* Targeting both possible h2s for Khorne */
+    font-size: 2rem;
+  }
+  .khorne-laugh-message, .altar-of-khorne-container p { /* Targeting both possible p's for Khorne */
+    font-size: 1rem;
+  }
+  .madlibs-about-me-card {
+    padding: 1.5rem;
+    margin: 1rem auto;
+    width: 90%; /* Make it more flexible */
+  }
+  .madlibs-title {
+    font-size: 2rem;
+  }
+  .madlibs-outer-container {
+    padding-left: 10px; /* Reduce padding for banners on small screens */
+    padding-right: 10px;
+  }
+  .junimo-banner {
+    display: none; /* Hide banners on smaller screens to save space */
+  }
+  .madlibs-outer-container {
+    max-width: 800px; /* Only the card width needed now */
+    padding-left: 0; /* Remove banner padding */
+    padding-right: 0; /* Remove banner padding */
+  }
+  .madlibs-about-me-card {
+    width: 100%; /* Allow card to take full width of container */
+    margin: 0; /* Remove auto margins to fit container if needed */
+  }
+  .quick-links-card { /* Original .quick-links-card was removed, this applies to .content.quick-links-silly-style */
+    padding: 15px;
+    margin: 1rem auto;
+  }
+  .quick-links-card h2, .content.quick-links-silly-style h1 { /* Targeting both possible h2s for Quick Links */
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  .quick-link-item {
+    padding: 10px 15px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  .quick-link-item img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+  }
+  .timezone-translator-container {
+    padding: 20px;
+    margin: 1rem auto;
+  }
+  .timezone-translator-container h2 {
+    font-size: 1.5rem;
+  }
+
+}
