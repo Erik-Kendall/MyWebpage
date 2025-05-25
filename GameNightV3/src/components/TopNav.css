@@ -1,0 +1,132 @@
+/* src/components/TopNav.css */
+
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3.5rem;
+    background-color: var(--header-bg-color); /* Use CSS variable */
+    color: var(--header-text-color); /* Use CSS variable */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    z-index: 1000;
+    font-weight: bold;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition for theme change */
+}
+
+.top-nav-left,
+.top-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* Adjusted gap for main links */
+}
+
+.top-nav-link {
+    color: inherit; /* Inherit from .top-nav */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.top-nav-link:hover {
+    color: var(--link-hover-color); /* Use CSS variable for hover */
+}
+
+.top-nav-admin-link {
+    color: #dc3545; /* Specific red for admin, consider adding a variable if more themes are planned */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.top-nav-admin-link:hover {
+    color: #c82333; /* Darker red on hover */
+}
+
+.top-nav-profile-link {
+    color: var(--button-text-color); /* Use button text color */
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    border: 1px solid var(--button-bg-color); /* Use button bg color for border */
+    background-color: var(--button-bg-color); /* Use button bg color */
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.top-nav-profile-link:hover {
+    background-color: var(--button-hover-bg-color); /* Use button hover bg color */
+    border-color: var(--button-hover-bg-color);
+}
+
+.top-nav-button {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    border: none;
+    color: var(--button-text-color);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.top-nav-logout-button {
+    background-color: #dc3545; /* Red for logout */
+}
+
+.top-nav-logout-button:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+.top-nav-login-button {
+    background-color: var(--button-bg-color); /* Blue for login */
+}
+
+.top-nav-login-button:hover {
+    background-color: var(--button-hover-bg-color); /* Darker blue on hover */
+}
+
+/* Responsive Adjustments for TopNav */
+@media (max-width: 900px) {
+    .top-nav {
+        padding: 0 1rem; /* Reduce padding */
+        justify-content: center; /* Center items for small screens */
+        flex-wrap: wrap; /* Allow items to wrap */
+        height: auto; /* Auto height to accommodate wrapping */
+        min-height: 3.5rem;
+    }
+
+    .top-nav-left {
+        gap: 1rem; /* Reduce gap between links */
+        flex-wrap: wrap; /* Allow links to wrap */
+        justify-content: center;
+        margin-bottom: 0.5rem; /* Add margin below links if they wrap */
+        width: 100%; /* Take full width */
+    }
+
+    .top-nav-right {
+        gap: 0.5rem; /* Reduce gap between buttons */
+        margin-top: 0.5rem; /* Add margin above buttons if they wrap */
+        width: 100%; /* Take full width */
+        justify-content: center;
+    }
+
+    .top-nav-link,
+    .top-nav-admin-link,
+    .top-nav-profile-link,
+    .top-nav-button {
+        font-size: 0.8rem; /* Slightly smaller font size */
+        padding: 0.4rem 0.8rem; /* Slightly smaller padding */
+    }
+}
+
+@media (max-width: 600px) {
+    .top-nav-left {
+        flex-direction: column; /* Stack links vertically */
+        align-items: flex-start; /* Align links to the left */
+    }
+}
