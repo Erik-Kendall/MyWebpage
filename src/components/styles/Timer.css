@@ -1,0 +1,28 @@
+.timer-display {
+    font-size: 3em;
+    font-weight: 700;
+    color: #00C4CC;
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.timer-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.timer-select {
+    width: auto;
+    min-width: 150px;
+}
+
+.timer-hint {
+    color: #A0A0A0;
+    font-style: italic;
+    font-size: 0.85em;
+    text-align: center;
+    margin-top: 15px;
+}

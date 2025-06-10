@@ -1,0 +1,218 @@
+/* --- DiceRoller.css --- */
+
+/* General tool card styling (assuming it wraps the dice roller) */
+.tool-card {
+    background-color: #2a2a3d;
+    border-radius: 12px;
+    padding: 15px; /* Further reduced padding */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    color: #e0e0e0;
+    max-width: 350px; /* Slightly reduced max-width again */
+    margin: 15px auto; /* Further reduced margin */
+}
+
+.dice-roller-card h2 {
+    color: #8be9fd; /* Accent color */
+    margin-bottom: 8px; /* Slightly reduced margin */
+    font-size: 2em;
+}
+
+.dice-roller-subtitle {
+    color: #bd93f9; /* Another accent color */
+    font-style: italic;
+    margin-bottom: 10px; /* Further reduced margin */
+    font-size: 0.9em;
+}
+
+.dice-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Slightly reduced gap */
+    margin-bottom: 15px; /* Further reduced margin */
+    align-items: center;
+}
+
+.dice-controls label {
+    font-weight: bold;
+    color: #f8f8f2;
+}
+
+.die-type-select,
+.num-dice-select {
+    padding: 6px 10px; /* Slightly reduced padding */
+    border-radius: 8px;
+    border: 1px solid #6272a4;
+    background-color: #44475a;
+    color: #f8f8f2;
+    font-size: 0.9em; /* Slightly reduced font size */
+    cursor: pointer;
+    appearance: none; /* Remove default select arrow */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23f8f8f2%22%20d%3D%22M287%2C197.9%20c5.3%2C5.3%205.3%2C13.8%200%2C19.1l-117.8%2C117.8c-2.6%2C2.6-6%2C3.9-9.5%2C3.9s-6.9%2C-1.3-9.5%2C-3.9l-117.8%2C-117.8c-5.3%2C-5.3-5.3%2C-13.8%200%2C-19.1s13.8%2C-5.3%2019.1%2C0L146.2%2C284.1l108.5%2C-108.5C273.1%2C192.6%20281.7%2C192.6%20287%2C197.9z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 12px;
+}
+
+.die-type-select:disabled,
+.num-dice-select:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* --- Dice Display Area (Simplified Visuals) --- */
+.dice-display-area {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Slightly reduced gap */
+    justify-content: center;
+    align-items: center;
+    min-height: 100px; /* Reduced minimum height */
+    margin-bottom: 15px; /* Further reduced margin */
+}
+
+.visual-die {
+    width: 70px; /* Slightly reduced size for all dice */
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.8em; /* Adjusted font size */
+    font-weight: bold;
+    color: #f8f8f2; /* Number color */
+    background-color: #6272a4; /* Default background for dice */
+    border: 3px solid #44475a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease; /* Smooth transition for hover/focus */
+}
+
+/* Specific shapes for different die types (2D) */
+.die-shape-d4 {
+    /* D4 often looks like a tetrahedron pointing up, so maybe a triangle or diamond */
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent; /* Adjusted size */
+    border-right: 40px solid transparent; /* Adjusted size */
+    border-bottom: 70px solid #6272a4; /* Adjusted size */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    position: relative; /* To position the number */
+    box-shadow: none; /* No shadow on the border trick */
+}
+.die-shape-d4 .die-number {
+    position: absolute;
+    top: 25px; /* Adjusted to center number on triangle */
+    left: -12px; /* Adjusted to center number */
+    width: 24px; /* Adjusted width */
+    text-align: center;
+    font-size: 1.6em; /* Adjusted font size */
+    color: #f8f8f2;
+}
+
+.die-shape-d6 {
+    border-radius: 10px; /* Slightly reduced border-radius */
+}
+
+.die-shape-d8,
+.die-shape-d10,
+.die-shape-d12,
+.die-shape-d20 {
+    border-radius: 50%; /* Keep as circle */
+    width: 70px; /* Adjusted size */
+    height: 70px; /* Adjusted size */
+}
+
+.die-shape-d20 {
+    background-color: #ff79c6; /* Different color for d20 for visual distinction */
+}
+
+
+/* --- Button Styling --- */
+.primary-button {
+    background-color: #bd93f9; /* Purple accent */
+    color: #2a2a3d;
+    border: none;
+    padding: 10px 20px; /* Slightly reduced padding */
+    border-radius: 8px;
+    font-size: 1em; /* Slightly reduced font size */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 10px; /* Further reduced margin */
+}
+
+.primary-button:hover {
+    background-color: #ff79c6; /* Pink accent on hover */
+    transform: translateY(-2px);
+}
+
+.primary-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.primary-button:disabled {
+    background-color: #44475a;
+    color: #999;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* --- Roll Results Display --- */
+.roll-results {
+    margin-top: 10px; /* Further reduced margin */
+    font-size: 1.2em; /* Slightly reduced font size */
+    color: #f8f8f2;
+}
+
+.roll-results .result-text {
+    color: #50fa7b; /* Green accent for results */
+    font-weight: bold;
+    font-size: 1.1em; /* Adjusted font size */
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 600px) {
+    .tool-card {
+        padding: 10px; /* Further reduced padding for mobile */
+        margin: 10px auto; /* Further reduced margin for mobile */
+        max-width: 95%; /* Allow it to take more width on small screens */
+    }
+
+    .dice-roller-card h2 {
+        font-size: 1.6em; /* Adjusted font size for mobile */
+    }
+
+    .dice-controls {
+        flex-direction: column;
+        gap: 8px; /* Adjusted gap for mobile */
+    }
+
+    .visual-die {
+        width: 50px; /* Further reduced size for mobile */
+        height: 50px;
+        font-size: 2em; /* Adjusted font size for mobile */
+    }
+
+    .die-shape-d4 {
+        border-left: 30px solid transparent; /* Adjusted size for mobile */
+        border-right: 30px solid transparent; /* Adjusted size for mobile */
+        border-bottom: 50px solid #6272a4; /* Adjusted size for mobile */
+    }
+    .die-shape-d4 .die-number {
+        top: 18px; /* Adjusted for mobile */
+        font-size: 1.2em; /* Adjusted for mobile */
+    }
+
+    .primary-button {
+        padding: 8px 15px; /* Further reduced padding for mobile */
+        font-size: 0.9em; /* Further reduced font size for mobile */
+    }
+
+    .roll-results {
+        font-size: 1em; /* Further reduced font size for mobile */
+    }
+}

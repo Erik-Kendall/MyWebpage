@@ -1,0 +1,34 @@
+.timezone-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.timezone-label {
+    font-size: 0.9em;
+    color: #A0A0A0;
+    text-align: left; /* Align label to the left */
+}
+
+.timezone-select {
+    /* Inherits from GamingTools.css .text-input */
+}
+
+.datetime-input {
+    /* Inherits from GamingTools.css .text-input */
+}
+
+.convert-button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.converted-result {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #00C4CC;
+    text-align: center;
+    margin-top: 20px;
+    word-break: break-word;
+}

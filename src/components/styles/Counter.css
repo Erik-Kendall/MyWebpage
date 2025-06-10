@@ -1,0 +1,61 @@
+.hp-display-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.hp-label {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #E0E0E0;
+}
+
+.hp-input {
+    width: 100px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.hp-value {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #9C27B0; /* Purple for HP value */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.hp-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 8px;
+    margin-bottom: 20px;
+    justify-items: center;
+}
+
+.hp-reset-button {
+    grid-column: span 1; /* Default to 1 column */
+}
+
+@media (min-width: 400px) {
+    .hp-buttons {
+        grid-template-columns: repeat(4, 1fr); /* 4 buttons per row */
+    }
+    .hp-reset-button {
+        grid-column: span 2; /* Make Reset span two columns on wider screens */
+        max-width: 150px;
+    }
+}
+
+.hp-manual-input {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.manual-input {
+    width: 100px;
+    text-align: center;
+}
