@@ -1,0 +1,171 @@
+/* --- InitiativeTracker.css --- */
+
+/* Inherit general tool-card styling from App.css or a common CSS file */
+.initiative-tracker-card {
+    /* Specific overrides or additions for the Initiative Tracker */
+    max-width: 600px;
+}
+
+.initiative-tracker-card h2 {
+    color: #8be9fd; /* Accent color */
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.combatant-input,
+.initiative-input {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #6272a4;
+    background-color: #44475a;
+    color: #f8f8f2;
+    font-size: 1em;
+    flex-grow: 1; /* Allows inputs to grow */
+    min-width: 150px; /* Minimum width before wrapping */
+}
+
+.combatant-input::placeholder,
+.initiative-input::placeholder {
+    color: #bbb;
+}
+
+.add-button {
+    background-color: #50fa7b; /* Green accent */
+    color: #2a2a3d;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.add-button:hover {
+    background-color: #69ff8c;
+}
+
+.add-button:disabled {
+    background-color: #44475a;
+    color: #999;
+    cursor: not-allowed;
+}
+
+.tracker-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+    justify-content: center;
+}
+
+.tracker-controls button {
+    background-color: #bd93f9; /* Purple accent */
+    color: #2a2a3d;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 0.95em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.tracker-controls button:hover {
+    background-color: #ff79c6; /* Pink accent on hover */
+}
+
+.tracker-controls button:disabled {
+    background-color: #44475a;
+    color: #999;
+    cursor: not-allowed;
+}
+
+.combatant-list {
+    min-height: 150px; /* Ensure some space even when empty */
+    background-color: #44475a;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: left;
+}
+
+.combatant-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.combatant-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed #6272a4;
+    color: #f8f8f2;
+    font-size: 1.1em;
+}
+
+.combatant-list li:last-child {
+    border-bottom: none;
+}
+
+.combatant-details {
+    flex-grow: 1;
+}
+
+.current-turn {
+    background-color: #50fa7b22; /* Light green highlight for current turn */
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-weight: bold;
+    color: #50fa7b; /* Make text green for current turn */
+}
+
+.delete-combatant-button {
+    background: none;
+    border: none;
+    color: #ff5555; /* Red for delete */
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: transform 0.2s ease;
+}
+
+.delete-combatant-button:hover {
+    transform: scale(1.2);
+}
+
+.empty-message {
+    color: #bbb;
+    font-style: italic;
+    padding: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .input-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .combatant-input,
+    .initiative-input,
+    .add-button {
+        width: 100%; /* Full width on small screens */
+        min-width: unset;
+    }
+
+    .tracker-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

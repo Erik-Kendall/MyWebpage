@@ -1,0 +1,269 @@
+/* src/styles/Games.css */
+
+/* --- GAMES PAGE CONTAINER --- */
+.games-page {
+    padding: 30px 20px; /* Consistent padding with Schedule page */
+    max-width: 1500px; /* <--- THIS MUST BE 1500px for more columns */
+    margin: 0 auto; /* Center the content */
+    background-color: var(--content-bg-color); /* This will be a dark color based on your image */
+    color: #f8f8f8; /* <-- CORRECTED: Light default text color for readability against dark background */
+    border-radius: 12px; /* Consistent border-radius with Schedule page background */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25); /* Consistent shadow with Schedule page calendar */
+    min-height: calc(100vh - var(--header-height, 0px) - var(--footer-height, 0px)); /* Ensure it covers viewport height */
+    box-sizing: border-box;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition for colorblind mode */
+}
+
+/* Colorblind mode override for this specific page container */
+/* Assuming your main app root or body gets the 'colorblind-mode' class */
+.colorblind-mode .games-page {
+    background-color: #e0e0e0; /* A colorblind-safe, high-contrast alternative (light) */
+    color: #333; /* Darker text for contrast (good for light background) */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* --- MAIN H1 HEADING FOR GAMES PAGE --- */
+.games-page h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--link-color); /* Use a theme color for primary headings (should be light enough for the dark background) */
+    font-size: 3.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: none; /* Remove aggressive text shadow */
+    background: none; /* Remove gradient background-clip */
+    -webkit-background-clip: unset; /* Remove webkit properties */
+    -webkit-text-fill-color: unset; /* Remove webkit properties */
+    display: block; /* Change back to block for simpler rendering */
+    padding: 10px 0; /* Adjust padding */
+    border-radius: 0; /* Remove border-radius */
+    border: none; /* Remove border */
+    box-shadow: none; /* Remove box shadow */
+    animation: none; /* Remove animation */
+}
+
+/* Colorblind mode override for H1 heading */
+.colorblind-mode .games-page h1 {
+    color: #000; /* Darker color for better contrast in colorblind mode */
+}
+
+/* --- SECRET HINT TEXT --- */
+/* Add this new style for the "secret line" */
+.secret-hint-text {
+    text-align: center;
+    color: #ccc; /* <-- New: Light grey for the secret line to be visible */
+    font-size: 1.1em;
+    margin-bottom: 25px; /* Adjust spacing as needed */
+    /* Add any other specific styling for this line */
+}
+
+/* Colorblind mode override for secret hint text */
+.colorblind-mode .secret-hint-text {
+    color: #666; /* Darker for readability on light background */
+}
+
+
+/* --- SECTION H2 HEADINGS FOR GAMES PAGE --- */
+.games-page h2 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border-color); /* Use theme border color */
+    color: #e0e0e0; /* <-- CORRECTED: Light default h2 text for readability against dark background */
+    font-size: 2em; /* Explicitly set font size */
+    font-weight: normal; /* Override potential bold from framework */
+}
+
+/* Colorblind mode override for H2 headings */
+.colorblind-mode .games-page h2 {
+    color: #333; /* Darker color for better contrast in colorblind mode */
+    border-bottom-color: #666; /* Adjust border color for contrast */
+}
+
+
+/* --- GAME LIST GRID LAYOUT --- */
+.game-list {
+    display: grid;
+    /* Force 3 columns, each taking an equal fraction of space */
+    grid-template-columns: repeat(3, 1fr); /* <--- Change this line */
+    gap: 15px;
+}
+
+/* --- INDIVIDUAL GAME ITEM CARDS --- */
+.game-item {
+    background-color: #f8f9fa; /* Light grey for card background, like inactive tabs */
+    border: 1px solid var(--border-color); /* Use theme border color */
+    border-radius: 10px; /* Consistent rounded corners */
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Softer, lighter shadow */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Colorblind mode override for game item cards */
+.colorblind-mode .game-item {
+    background-color: #f0f0f0; /* Slightly different background for contrast */
+    border-color: #999; /* Darker border for contrast */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.colorblind-mode .game-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.game-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* More prominent shadow on hover */
+}
+
+.game-item h3 {
+    color: var(--link-color); /* Use theme link color for titles (should be light enough) */
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+    line-height: 1.2;
+}
+
+/* Colorblind mode override for game item titles */
+.colorblind-mode .game-item h3 {
+    color: #007bff; /* A distinct blue for better visibility */
+}
+
+.game-item p {
+    color: #555; /* Retained: Dark text for readability on the light card background */
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+/* Colorblind mode override for game item paragraphs */
+.colorblind-mode .game-item p {
+    color: #444; /* Darker text for readability (already good) */
+}
+
+
+/* --- DOOM EMBED CONTAINER --- */
+/* Assuming this is a unique section, keeping some distinct styling */
+.doom-embed-container {
+    background-color: #333; /* Slightly darker grey for this section */
+    border: 2px dashed #dc3545; /* A standard danger/red color */
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 40px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(220, 53, 69, 0.7); /* Red glow effect */
+    color: #f0f0f0; /* Light text for this dark section */
+    /* Add a specific width for better control */
+    width: 80%; /* Adjust as needed, e.g., 80% of its parent */
+    max-width: 800px; /* Max width to prevent it from getting too large */
+    margin-left: auto; /* Center the container */
+    margin-right: auto; /* Center the container */
+}
+
+/* Colorblind mode override for doom embed container */
+.colorblind-mode .doom-embed-container {
+    background-color: #555; /* A different dark shade */
+    border-color: #ff8c00; /* Orange for better contrast with red */
+    box-shadow: 0 0 10px rgba(255, 140, 0, 0.7); /* Orange glow effect */
+}
+
+.doom-embed-container h2 {
+    color: #dc3545; /* Red for headings */
+    font-size: 2em;
+    margin-bottom: 15px;
+    border-bottom: none; /* Override general h2 border */
+}
+
+/* Colorblind mode override for doom embed container h2 */
+.colorblind-mode .doom-embed-container h2 {
+    color: #ff8c00; /* Orange for better contrast */
+}
+
+.doom-embed-container p {
+    color: #f0f0f0;
+    margin-bottom: 25px;
+}
+
+/* Colorblind mode override for doom embed container p */
+.colorblind-mode .doom-embed-container p {
+    color: #fff; /* White for maximum contrast */
+}
+
+/* This is for the hint message text */
+.hint-message {
+    color: #e0e0e0; /* <-- CORRECTED: Light default hint message text for readability against dark background */
+    font-size: 0.9em;
+    text-align: center;
+    margin-top: 10px;
+    animation: float 3s ease-in-out infinite; /* Keep animation for flair */
+}
+
+/* Colorblind mode override for hint message */
+.colorblind-mode .hint-message {
+    color: #555; /* Darker text for readability on light background (already good) */
+}
+
+/* --- ANIMATIONS --- */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* --- RESPONSIVE ADJUSTMENTS FOR GAMES PAGE --- */
+@media (max-width: 768px) {
+    .games-page {
+        padding: 15px;
+        border-radius: 8px; /* Slightly less rounded on small screens */
+    }
+    .games-page h1 {
+        font-size: 2.5rem; /* Adjust for smaller screens */
+        padding: 8px 0;
+    }
+    .games-page h2 {
+        font-size: 1.8em; /* Adjust for smaller screens */
+    }
+    .game-list {
+        grid-template-columns: 1fr; /* Stack items vertically on smaller screens */
+    }
+    .game-item h3 {
+        font-size: 1.2em;
+    }
+    .doom-embed-container h2 {
+        font-size: 2rem;
+    }
+    /* Adjust Doom embed for smaller screens */
+    .doom-embed-container {
+        width: 95%; /* Take more width on smaller screens */
+        padding: 15px;
+    }
+}
+
+/* Additional style for the iframe itself inside the container, if directly controlling it */
+.doom-embed-container iframe {
+    width: 100%; /* Make the iframe fill its container */
+    height: 600px; /* Set a fixed height or adjust with aspect-ratio for responsiveness */
+    border: none;
+    display: block; /* Remove extra space below iframe */
+}
+
+/* Colorblind mode overrides for iframe (if needed, but usually iframe content is not controlled by parent CSS) */
+.colorblind-mode .doom-embed-container iframe {
+    /* No specific changes needed here as iframe content is separate */
+}

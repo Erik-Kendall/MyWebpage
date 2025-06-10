@@ -1,0 +1,294 @@
+/* --- MySoundboard.css --- */
+
+.my-soundboard-card {
+    max-width: 900px; /* Wider to accommodate two sections */
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #2a2a3d;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    color: #e0e0e0;
+}
+
+.my-soundboard-card h2 {
+    color: #8be9fd;
+    margin-bottom: 10px;
+}
+
+.my-soundboard-card .subtitle {
+    color: #bd93f9;
+    font-style: italic;
+    margin-bottom: 25px;
+    font-size: 0.9em;
+}
+
+.my-soundboard-grid {
+    border: 2px dashed #6272a4; /* Dashed border for drop zone */
+    background-color: #383a4c;
+    border-radius: 8px;
+    min-height: 150px; /* Make it clearly a drop zone */
+    display: grid;
+    /* Adjusted minmax for better text wrapping and spacing */
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); /* Increased min width */
+    gap: 15px;
+    padding: 20px;
+    align-content: start; /* Align items to the top */
+    margin-bottom: 30px;
+}
+
+.my-sound-button-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Added min-height to wrapper to ensure consistency even with shorter text */
+    min-height: 60px; /* Adjust as needed for multi-line text */
+}
+
+.my-sound-button {
+    background-color: #50fa7b; /* Green for custom sounds */
+    color: #2a2a3d;
+    border: none;
+    padding: 10px 10px; /* Reduced vertical padding slightly, increased horizontal for wrapping */
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+
+    /* --- FIXES FOR TRUNCATION --- */
+    white-space: normal; /* Allow text to wrap */
+    overflow: visible;   /* Ensure all content is visible */
+    text-overflow: clip; /* Remove ellipsis, let it clip if truly overflows (though it shouldn't now) */
+    width: 100%; /* Keep 100% width within its grid cell */
+    min-height: 50px; /* Ensure button has enough height for multiple lines of text */
+    display: flex; /* Use flexbox to center content vertically/horizontally */
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+    line-height: 1.2; /* Adjust line height for better multi-line appearance */
+    /* --- END FIXES --- */
+}
+
+.my-sound-button:hover {
+    background-color: #69ff8c;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.my-sound-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.remove-my-sound-button {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #ff5555;
+    color: white;
+    border: 2px solid #2a2a3d; /* Border to stand out */
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3em;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    z-index: 10;
+}
+
+.remove-my-sound-button:hover {
+    background-color: #ff79c6;
+    transform: scale(1.1);
+}
+
+.empty-message {
+    color: #bbb;
+    font-style: italic;
+    padding: 20px;
+    grid-column: 1 / -1; /* Make it span all columns */
+}
+
+.available-sounds-heading {
+    color: #8be9fd;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 1.6em;
+}
+
+.available-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.category-button {
+    background-color: #44475a;
+    color: #f8f8f2;
+    border: 1px solid #6272a4;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.category-button:hover {
+    background-color: #6272a4;
+}
+
+.category-button.active {
+    background-color: #bd93f9; /* Active category color */
+    color: #2a2a3d;
+    border-color: #bd93f9;
+    font-weight: bold;
+}
+
+.available-sounds-grid {
+    display: grid;
+    /* Adjusted minmax for better text wrapping and spacing */
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 15px;
+    padding: 10px;
+    background-color: #383a4c;
+    border-radius: 8px;
+    min-height: 150px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.available-sound-button {
+    background-color: #6272a4; /* Grey-purple for available sounds */
+    color: #f8f8f2;
+    border: none;
+    padding: 10px 10px; /* Reduced vertical padding slightly, increased horizontal for wrapping */
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: grab; /* Indicate draggable */
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+
+    /* --- FIXES FOR TRUNCATION --- */
+    white-space: normal; /* Allow text to wrap */
+    overflow: visible;   /* Ensure all content is visible */
+    text-overflow: clip; /* Remove ellipsis */
+    min-height: 50px; /* Ensure button has enough height for multiple lines of text */
+    display: flex; /* Use flexbox to center content vertically/horizontally */
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+    line-height: 1.2; /* Adjust line height for better multi-line appearance */
+    /* --- END FIXES --- */
+}
+
+.available-sound-button:hover {
+    background-color: #8be9fd; /* Light blue on hover */
+    color: #2a2a3d;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.available-sound-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.available-sound-button[draggable="true"] {
+    cursor: grab;
+}
+
+.available-sound-button[draggable="true"]:active {
+    cursor: grabbing;
+}
+
+
+.hint-text {
+    color: #bbb;
+    font-size: 0.8em;
+    margin-top: 25px;
+    font-style: italic;
+}
+
+/* --- Layout for both soundboards within GamingTools.jsx --- */
+.soundboard-section-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    justify-content: center;
+    gap: 40px; /* Space between the two soundboards */
+    width: 100%; /* Take full width of parent */
+}
+
+/* Ensure individual soundboard cards don't exceed their own max-width if placed in flex */
+.soundboard-section-container .soundboard-card,
+.soundboard-section-container .my-soundboard-card {
+    flex-grow: 1; /* Allow them to grow */
+    min-width: 300px; /* Minimum width before wrapping */
+    max-width: 500px; /* Max width to prevent them from getting too wide */
+    width: 100%; /* Fallback for flex-basis */
+    margin-top: 0; /* Remove top margin as container handles spacing */
+    margin-bottom: 0;
+}
+
+/* Ensure DIYStatsSheet and InitiativeTracker still have their own margins */
+.soundboard-section-container .diy-stats-sheet-card,
+.soundboard-section-container .initiative-tracker-card {
+    margin-top: 40px; /* Restore original margins */
+    margin-bottom: 40px;
+    width: auto; /* Let them take their natural width */
+    max-width: 500px; /* Or whatever their original max-width was */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 990px) {
+    .soundboard-section-container {
+        flex-direction: column; /* Stack vertically on smaller screens */
+        align-items: center;
+    }
+    .soundboard-section-container .soundboard-card,
+    .soundboard-section-container .my-soundboard-card {
+        margin-top: 20px; /* Add some space when stacked */
+        margin-bottom: 20px;
+        width: 100%; /* Take full width when stacked */
+        max-width: 500px; /* Constrain to max width for readability */
+    }
+}
+
+@media (max-width: 600px) {
+    .my-soundboard-card {
+        padding: 20px;
+    }
+    .my-soundboard-grid, .available-sounds-grid {
+        /* Adjusted minmax for smaller screens as well */
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Adjusted for better fit */
+        gap: 10px;
+        padding: 15px;
+    }
+    .my-sound-button, .available-sound-button {
+        padding: 10px 8px; /* Slightly more padding for wrapping */
+        font-size: 0.9em;
+        min-height: 45px; /* Adjust min-height for smaller buttons */
+    }
+    .remove-my-sound-button {
+        width: 22px;
+        height: 22px;
+        font-size: 1.1em;
+        top: -6px;
+        right: -6px;
+    }
+    .category-button {
+        padding: 6px 10px;
+        font-size: 0.8em;
+    }
+    .available-sounds-heading {
+        font-size: 1.4em;
+    }
+}
